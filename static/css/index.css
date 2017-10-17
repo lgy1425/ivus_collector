@@ -1,0 +1,88 @@
+@import url('http://getbootstrap.com/2.3.2/assets/css/bootstrap.css');
+html,body { height: 100%; margin: 0px; padding: 0px; }
+.container {
+   margin-top: 10px;
+}
+.nav-tabs > li {
+   position:relative;
+   color:#333;
+}
+.nav-tabs > li > a {
+   display:inline-block;
+   color:#333;
+}
+.nav-tabs > li > span {
+   display:none;
+   cursor:pointer;
+   position:absolute;
+   right: 6px;
+   top: 8px;
+   color: black;
+}
+.nav-tabs > li:hover > span {
+   display: inline-block;
+}
+
+.wrapper {
+    padding : 50px;
+}
+
+#tab_container {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding : 5px;
+    height : 100%;
+}
+
+.tab-content{
+    height:100%;
+}
+
+.tab-pane{
+    background: #000;
+    height : 100%;
+    padding : 100px;
+}
+
+.nav{
+    margin-bottom: 0px;
+}
+
+.dragdrop{
+    width : 60%;
+    height : 400px;
+    margin : auto;
+    background: #f6f8fa;
+    display: table; 
+}
+
+.dragdrop p {
+    text-align: center;
+    font-size: 25px;
+    vertical-align: middle;
+    display: table-cell; 
+}
+
+.upload_here{
+    width : 50%;
+    margin : auto;
+    height : 40px;
+    margin-top : 20px;
+    background: #4f4f4f;
+    display: table; 
+}
+
+.upload_here p {
+    text-align: center;
+    color : #fff;
+    font-size : 15px;
+    vertical-align: middle;
+    display: table-cell; 
+}
+
+.noon{
+    height: 400px;
+    background: #aaa;
+    width : 80%;
+}
