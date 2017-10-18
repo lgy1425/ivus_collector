@@ -20,7 +20,7 @@
     <div class="col-md-10">
     <div id="tab_container">
         <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><a href="#fundus_1" data-toggle="tab">New fundus</a><span>x</span>
+            <li class="active"><a href="#fundus_1" data-toggle="tab" id="tab_1">New fundus</a><span>x</span>
             </li>
             
             <li><a href="#" class="add-fundus">+ Add Fundus</a>
@@ -28,22 +28,40 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="fundus_1">
+                <input type="file" id="uploader_1" class="uploader" style="visibility: hidden;height:0px;" fundus_id="1">
                 <div class="row">
                     <div class="col-md-8">
 
-                        <div class="dragdrop">
+                        <div class="dragdrop" fundus_id="0" id="dragdrop_1">
+
+
+                            <img src="" class="eye_img" id="eye_img_1">
                             <p>Drag&Drop<br><br>Fundus Photo</p>
                             
                         </div>
 
-                        <div class="upload_here">
+                        <div class="upload_here" fundus_id="1">
                             <p>or Upload here</p>
                         </div>
+
+
+
 
                     </div>
 
                     <div class="col-md-4">
-                        <div class="noon"></div>
+                        <div class="noon">
+                            
+                            <p class="drnoon">&lt; Dr.Noon &gt;</p>
+                            <p class="clinic_note clinic_note_title" id="note_title_1">&nbsp<p>
+                            <p class="clinic_note" id="optical_disk_1">&nbsp<p>
+                            <p class="clinic_note" id="vessel_ratio_1">&nbsp<p>
+                            <p class="clinic_note" id="bleeding_1">&nbsp<p>
+                            <p class="clinic_note" id="retina_1">&nbsp<p>
+                            <p class="clinic_note" id="etc_1">&nbsp<p>
+                            <div class="detail_report_btn" fundus_id="1"><p>Detail Report</p></div>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -60,7 +78,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="{{url_for('static',filename='js/index.js')}}"></script>
