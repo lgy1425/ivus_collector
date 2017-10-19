@@ -10,6 +10,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.jinja_env.cache = None
 app.config["UPLOAD_FOLDER"] = "static/eye"
 
+abs_path = "/home/mediwhale/PycharmProjects/fundus_gui/"
 
 @app.route("/")
 def index():
@@ -35,7 +36,7 @@ def upload_eye() :
 
    
     save_path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
-    eye.save(save_path)
+    eye.save(abs_path+save_path)
 
     image_path = "./static/eye/" +filename
 
