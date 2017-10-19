@@ -1,5 +1,10 @@
 @import url('http://getbootstrap.com/2.3.2/assets/css/bootstrap.css');
 html,body { height: 100%; margin: 0px; padding: 0px; }
+
+.row {
+    overflow : hidden;
+}
+
 .container {
    margin-top: 10px;
 }
@@ -11,6 +16,8 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
    display:inline-block;
    color:#333;
 }
+
+
 
 .nav-tabs > li > a.active {
    display:inline-block;
@@ -101,7 +108,7 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 
 .drnoon{
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
   color:white;
   padding-top: 30px;
 }
@@ -140,6 +147,25 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   top : -1000px;
 }
 
+.p_id_text {
+    color : white;
+    text-align: center;
+    margin-top : 10px;
+    font-size: 14px;
+}
 
+.detail_report_row {
+    height: 0px;
+    width : 100%;
+}
 
+.detail_report_img {
+    width : 100%;
+    height : 100%;
+}
+
+.tab-pane {
+    padding : 30px;
+    padding-bottom: 200px;
+}
 
