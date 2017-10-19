@@ -213,7 +213,7 @@ function handleFileUpload(files,id) {
 
 
             }, error: function(jqXHR, textStatus, errorThrown) {
-                location.reload();
+                //location.reload();
             },
             timeout: 20000
         });
