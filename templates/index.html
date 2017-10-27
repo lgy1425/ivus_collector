@@ -12,7 +12,28 @@
   </head>
   <body>
 
-        <h1>hello</h1>
+        <div class="contianer">
+
+            <div class="row">
+                <img src="./static/ivus_jpg/patient1/preLAD/0001.jpg" id="ivus_img">
+            </div>
+
+
+            <div class="row">
+                <select name="" id="">
+
+                    {% for v in vessels %}
+                        <option>{{v[0]}}/{{v[1]}}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+
+        </div>
+
+
+
+
 
 
 

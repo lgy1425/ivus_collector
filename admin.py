@@ -3,6 +3,7 @@ from flask import Flask,render_template,current_app,url_for,g,session,redirect,m
 import random
 import os
 import json
+import csv
 
 app = Flask(__name__)
 app.secret_key = 'super secret key'
@@ -12,9 +13,16 @@ app.config["UPLOAD_FOLDER"] = "static/eye"
 
 abs_path = "/home/mediwhale/PycharmProjects/fundus_gui/"
 
+vessels = []
+
+with open('static/vessels.csv', 'rb') as csvfile:
+    spamreader = csv.reader(csvfile)
+    for row in spamreader:
+        vessels.append([row[0],row[1]])
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html",vessels=vessels)
 
 @app.before_request
 def before_request():
