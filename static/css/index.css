@@ -7,5 +7,10 @@
 }
 
 .row {
-    padding : 30px;
+    margin : 0px;
+    padding : 10px;
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
 }
