@@ -4,6 +4,7 @@ import random
 import os
 import json
 import csv
+from time import gmtime, strftime
 
 app = Flask(__name__)
 app.secret_key = 'super secret key'
@@ -77,7 +78,7 @@ def wrong_tvc() :
     
     with open(os.path.join(APP_STATIC, 'wrong_tvc.csv'), 'a') as f:
         writer = csv.writer(f)
-        writer.writerow([vessel,prev_frame,after_frame])
+        writer.writerow([vessel,prev_frame,after_frame,strftime("%Y-%m-%d %H:%M:%S", gmtime())])
 
     return json.dumps({})
 
@@ -90,7 +91,7 @@ def wrong_ivus() :
     
     with open(os.path.join(APP_STATIC, 'wrong_ivus.csv'), 'a') as f:
         writer = csv.writer(f)
-        writer.writerow([vessel,prev_frame,after_frame])
+        writer.writerow([vessel,prev_frame,after_frame,strftime("%Y-%m-%d %H:%M:%S", gmtime())])
 
     return json.dumps({})
 
