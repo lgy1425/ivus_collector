@@ -49,7 +49,7 @@ def upload_eye() :
     save_path = os.path.join(app.config['UPLOAD_FOLDER'],filename)
     eye.save(abs_path+save_path)
 
-    image_path = "./static/eye/" +filename
+    image_path = os.path.join(APP_STATIC, "eye/" +filename)
 
 
     
