@@ -69,6 +69,31 @@ def get_vessel_info() :
     patient, v = vessel.split("/")
     return json.dumps({"max_frame":max_frame,"patient":patient,"v":v})
 
+@app.route("/wrong_tvc",methods=["POST"])
+def wrong_tvc() :
+    vessel = request.json['vessel']
+    prev_frame = request.json['prev_frame']
+    after_frame = request.json['after_frame']
+    
+    with open(os.path.join(APP_STATIC, 'wrong_tvc.csv'), 'a') as f:
+        writer = csv.writer(f)
+        writer.writerow([vessel,prev_frame,after_frame])
+
+    return json.dumps({})
+
+
+@app.route("/wrong_ivus",methods=["POST"])
+def wrong_ivus() :
+    vessel = request.json['vessel']
+    prev_frame = request.json['prev_frame']
+    after_frame = request.json['after_frame']
+    
+    with open(os.path.join(APP_STATIC, 'wrong_ivus.csv'), 'a') as f:
+        writer = csv.writer(f)
+        writer.writerow([vessel,prev_frame,after_frame])
+
+    return json.dumps({})
+
 if __name__=="__main__":
     app.run(debug=True)
 

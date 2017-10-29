@@ -12,6 +12,8 @@ for f in folders :
         for fi in files :
             file_name = fi[8:]
             img = Image.open("static/ivus_jpg/"+f +"/"+v+"/"+fi)
-            img.resize((300,300))
+            img = img.resize((200,200))
+            img = img.convert("L")
             img.save("static/ivus_jpg/"+f +"/"+v+"/"+file_name)
             os.remove("static/ivus_jpg/"+f +"/"+v+"/"+fi)
+

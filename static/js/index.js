@@ -31,6 +31,54 @@ $(function() {
 
     });
 
+    $("#wrong_tvc_button").click(function(){
+        
+        prev_frame = $("#wrong_tvc_prev").val();
+        after_frame = $("#wrong_tvc_after").val();
+        vessel = $( "#vessel_select" ).val();
+
+        console.log(prev_frame);
+
+        $.ajax({
+            type:"POST",
+            url:"/wrong_tvc",
+            dataType: "json",
+            contentType:"application/json",
+            data : JSON.stringify({"vessel":vessel,"prev_frame":prev_frame,"after_frame":after_frame}),
+            success:function(args){
+
+                alert("잘못된 TVC : "+vessel + "  "+ prev_frame + " ~ " + after_frame);
+
+
+            }
+        });
+
+    });
+
+    $("#wrong_ivus_button").click(function(){
+        
+        prev_frame = $("#wrong_ivus_prev").val();
+        after_frame = $("#wrong_ivus_after").val();
+        vessel = $( "#vessel_select" ).val();
+
+        console.log(prev_frame);
+
+        $.ajax({
+            type:"POST",
+            url:"/wrong_ivus",
+            dataType: "json",
+            contentType:"application/json",
+            data : JSON.stringify({"vessel":vessel,"prev_frame":prev_frame,"after_frame":after_frame}),
+            success:function(args){
+
+                alert("잘못된 IVUS : "+vessel + "  "+ prev_frame + " ~ " + after_frame);
+
+
+            }
+        });
+
+    });
+
     $("html, body").on('mousewheel',function(e){
         if (e.originalEvent.deltaY>0) {
             if (frame_number < max_frame) { 
