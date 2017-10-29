@@ -66,7 +66,7 @@ def upload_eye() :
 @app.route("/get_vessel_info",methods=["POST"])
 def get_vessel_info() :
     vessel = request.json['vessel']
-    max_frame = len(os.listdir(os.path.join(APP_STATIC, "static/ivus_jpg/"+vessel)))
+    max_frame = len(os.listdir(os.path.join(APP_STATIC, "ivus_jpg/"+vessel)))
     patient, v = vessel.split("/")
     return json.dumps({"max_frame":max_frame,"patient":patient,"v":v})
 
