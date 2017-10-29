@@ -11,11 +11,14 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.jinja_env.cache = None
 app.config["UPLOAD_FOLDER"] = "static/eye"
 
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
+APP_STATIC = os.path.join(APP_ROOT, 'static')
+
 abs_path = "/home/mediwhale/PycharmProjects/fundus_gui/"
 
 vessels = []
 
-with open('static/vessels.csv', 'rb') as csvfile:
+with open(os.path.join(APP_STATIC, 'vessels.csv'), 'rb') as csvfile:
     spamreader = csv.reader(csvfile)
     for row in spamreader:
         vessels.append([row[0],row[1]])
