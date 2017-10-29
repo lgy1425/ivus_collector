@@ -8,23 +8,23 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
   </head>
   <body>
 
         <div class="container">
 
             <div class="row">
-                <img src="./static/ivus_jpg/patient1/preLAD/0001.jpg" id="ivus_img">
+                <img src="./static/ivus_jpg/patient1/preLAD/0001.jpg" id="ivus_img"> <p>frame : <span id="frame_number">1</span></p>
             </div>
 
 
             <div class="row">
-                <select name="" id="">
+                <select name="vessel_select" id="vessel_select">
 
                     {% for v in vessels %}
-                        <option>{{v[0]}}/{{v[1]}}</option>
+                        <option value="{{v[0]}}/{{v[1]}}">{{v[0]}}/{{v[1]}}</option>
                     {% endfor %}
 
                 </select>
@@ -34,8 +34,16 @@
 
             <div class="row">
 
-                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="1500" data-slider-step="1" data-slider-value="1"/>
+                <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="1675" data-slider-step="1" data-slider-value="1"/>
 
+            </div>
+
+            <div class="row">
+                <p>잘못된 TVC : <input type="text" id="wrong_tvc_prev" size="5" class="input_frame"> ~ <input type="text" id="wrong_tvc_after" size="5" class="input_frame"> <button class="btn" id="wrong_tvc_button">enter</button></p>
+            </div>
+
+            <div class="row">
+                <p>제외할 IVUS : <input type="text" id="wrong_ivus_prev" size="5" class="input_frame"> ~ <input type="text" id="wrong_ivus_after" size="5" class="input_frame"> <button class="btn" id="wrong_ivus_button">enter</button></p>
             </div>
 
 
@@ -54,8 +62,8 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script> -->
     <script src="{{url_for('static',filename='js/jquery-3.2.1.min.js')}}"></script>
     <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
-    <script src="{{url_for('static',filename='js/index.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.9.0/bootstrap-slider.min.js"></script>
+    <script src="{{url_for('static',filename='js/index.js')}}"></script>
   </body>
 </html>
 

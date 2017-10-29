@@ -59,6 +59,13 @@ def upload_eye() :
     result = {"eye_path":image_path,"vessel_ratio":vessel_ratio,"optical_disk":optical_disk,"bleeding":bleeding,"retina":retina,"etc":etc,"fundus_name":fundusname}
     return json.dumps(result)
 
+@app.route("/get_vessel_info",methods=["POST"])
+def get_vessel_info() :
+    vessel = request.json['vessel']
+    max_frame = len(os.listdir("static/ivus_jpg/"+vessel))
+    patient, v = vessel.split("/")
+    return json.dumps({"max_frame":max_frame,"patient":patient,"v":v})
+
 if __name__=="__main__":
     app.run(debug=True)
 
